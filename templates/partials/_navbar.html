@@ -1,0 +1,53 @@
+<header> 
+    <div class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <div class="container">
+            <a href="{% url 'index'%}" class="navbar-brand"> Movi App</a>
+            <ul class="navbar-nav mr-auto">
+
+                <li
+                    {% if request.path == '/' %} 
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item "
+                    {% endif %}
+                >
+
+                    <a href="{% url 'index'%}" class="nav-link">Anasayfa</a>
+                </li>
+                <li
+                    {% if 'hakkımızda'  in request.path %} 
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item "
+                    {% endif %}
+                >
+                    <a href="{% url 'about' %}" class="nav-link">Hakkımızda</a>
+                </li>
+                <li
+                    {% if 'contact'  in request.path %} 
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item "
+                    {% endif %}    
+                >
+                    <a href="{% url 'contact'%}" class="nav-link">contact</a>
+                </li>
+
+                <li
+                    {% if 'teachers'  in request.path %} 
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item "
+                    {% endif %}  
+                
+                
+                >
+                <a href="{% url 'teachers'%}" class="nav-link">teachers</a>
+            </li>
+               
+               
+            </ul>
+        </div>
+
+    </div>
+</header>
